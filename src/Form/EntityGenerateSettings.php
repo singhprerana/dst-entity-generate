@@ -93,7 +93,7 @@ final class EntityGenerateSettings extends ConfigFormBase {
         '#type' => 'checkboxes',
         '#title' => $this->t('Select Entity Types'),
         '#options' => $entity_list_items,
-        '#default_value' => isset($sync_entities) ? $sync_entities : [],
+        '#default_value' => $sync_entities ?? [],
         '#description' => $this->t('Select entity type to sync from the Drupal spec tool sheet.'),
       ];
       $disable_entities = $this->entityTypeDependencyCheck($entity_list_items);
@@ -104,7 +104,7 @@ final class EntityGenerateSettings extends ConfigFormBase {
         '#type' => 'textfield',
         '#title' => $this->t('Implementation Column Name'),
         '#description' => $this->t('Implementation status name of the column in DST sheet which will be used to identify whether the row needs to be synced or not. For e.g. "X"'),
-        '#default_value' => !empty($config->get('column_name')) ? $config->get('column_name') : 'x',
+        '#default_value' => $config->get('column_name') ?? 'x',
         '#required' => TRUE,
         '#size' => 30,
       ];
@@ -112,7 +112,7 @@ final class EntityGenerateSettings extends ConfigFormBase {
         '#type' => 'textfield',
         '#title' => $this->t('Implementation Column Value'),
         '#description' => $this->t('Implementation status value of the column in DST sheet which will be used to identify that the row is ready to sync. For e.g. "w"'),
-        '#default_value' => !empty($config->get('column_value')) ? $config->get('column_value') : 'w',
+        '#default_value' => $config->get('column_value') ?? 'w',
         '#size' => 30,
         '#required' => TRUE,
       ];
@@ -120,7 +120,7 @@ final class EntityGenerateSettings extends ConfigFormBase {
         '#type' => 'textfield',
         '#title' => $this->t('Implementation Update flag'),
         '#description' => $this->t('Implementation status value of the column in DST sheet which will be used to identify that the row is changed after earlier implementation and ready to sync. For e.g. "c"'),
-        '#default_value' => !empty($config->get('update_flag')) ? $config->get('update_flag') : 'c',
+        '#default_value' => $config->get('update_flag') ?? 'c',
         '#size' => 30,
         '#required' => TRUE,
       ];

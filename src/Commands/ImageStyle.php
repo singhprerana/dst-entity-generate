@@ -14,7 +14,6 @@ use Drupal\image\Entity\ImageStyle as CoreImageStyle;
  * @package Drupal\dst_entity_generate\Commands
  */
 class ImageStyle extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -69,7 +68,7 @@ class ImageStyle extends BaseEntityGenerate {
    * @usage drush deg:is
    *   Generates Image styles with Image effects if not present.
    * @usage drush deg:is --update
-   *   Generates Image styles with Image effects if not present also updates existing.
+   *   Update existing entity types with fields and creates new if not present.
    * @option update Update existing entity types with fields and creates new if not present.
    */
   public function generateImageStyle($options = ['update' => FALSE]) {

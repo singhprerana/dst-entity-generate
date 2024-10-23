@@ -13,7 +13,6 @@ use Drupal\dst_entity_generate\Services\GeneralApi;
  * @package Drupal\dst_entity_generate\Commands
  */
 class Paragraph extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -66,7 +65,7 @@ class Paragraph extends BaseEntityGenerate {
    * @usage deg:p
    *   Generates Paragraph types with fields if not present.
    * @usage drush deg:p --update
-   *   Generates Paragraph types with fields if not present also updates existing.
+   *   Updates paraggraph types & if not present, generates the same.
    * @option update Update existing entity types with fields and creates new if not present.
    */
   public function generateParagraph($options = ['update' => FALSE]) {

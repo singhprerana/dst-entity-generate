@@ -16,7 +16,6 @@ use Drupal\media\MediaSourceManager;
  * @package Drupal\dst_entity_generate\Commands
  */
 class Media extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -178,7 +177,6 @@ class Media extends BaseEntityGenerate {
       $bundles_data[$media_type['label']] = $media_type['id'];
     }
     $this->helper->generateEntityFields($bundle_type, $fields_data, $bundles_data, $mode);
-
   }
 
   /**
@@ -220,7 +218,6 @@ class Media extends BaseEntityGenerate {
       \array_push($media_types, $media);
     }
     return $media_types;
-
   }
 
   /**

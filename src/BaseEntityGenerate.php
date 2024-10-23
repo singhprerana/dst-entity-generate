@@ -10,7 +10,6 @@ use Drush\Commands\DrushCommands;
  * Base class for all entity generate commands.
  */
 abstract class BaseEntityGenerate extends DrushCommands {
-
   use StringTranslationTrait;
 
   /**

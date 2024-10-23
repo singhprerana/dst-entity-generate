@@ -12,7 +12,6 @@ use Drupal\dst_entity_generate\DstegConstants;
  * @package Drupal\dst_entity_generate\Commands
  */
 class UserRole extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -114,7 +113,6 @@ class UserRole extends BaseEntityGenerate {
       \array_push($user_roles, $user_role);
     }
     return $user_roles;
-
   }
 
 }

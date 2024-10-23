@@ -12,7 +12,6 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
  * @package Drupal\dst_entity_generate\Commands
  */
 class Workflow extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -62,7 +61,7 @@ class Workflow extends BaseEntityGenerate {
    * @usage drush deg:w
    *   Generates Workflow types with transitions and states if not present.
    * @usage drush deg:w --update
-   *   Generates Workflow types with transitions and states if not present also updates existing.
+   *   Update existing Workflow types and creates new if not present.
    * @option update Update existing Workflow types and creates new if not present.
    */
   public function generateWorkflows($options = ['update' => FALSE]) {

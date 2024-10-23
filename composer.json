@@ -1,9 +1,9 @@
 {
   "name": "acquia-pso/dst-entity-generate",
-  "type": "drupal-module",
   "description": "Drush powered command line tool for working with Drupal Spec tool.",
-  "version": "1.0.0",
   "license": "GPL-2.0+",
+  "type": "drupal-module",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Acquia India Team",
@@ -12,25 +12,19 @@
     }
   ],
   "require": {
-    "cweagans/composer-patches": "^1.6",
-    "drush/drush": "^10.3 || ^11",
+    "cweagans/composer-patches": "^2",
+    "drush/drush": "^11 || ^12 || ^13",
     "google/apiclient": "^2.8"
   },
   "require-dev": {
     "acquia/coding-standards": "^1.0.1",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
     "ergebnis/composer-normalize": "^2.8",
-    "vijaycs85/drupal-quality-checker": "dev-master"
+    "php-parallel-lint/php-parallel-lint": "^1.4",
+    "phpro/grumphp": "^1.16",
+    "squizlabs/php_codesniffer": "^3.10"
   },
   "suggest": {},
-  "extra": {
-    "drush": {
-      "services": {
-        "drush.services.yml": "^9"
-      }
-    },
-    "enable-patching": true
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
@@ -40,5 +34,16 @@
       "phpro/grumphp": true,
       "ergebnis/composer-normalize": true
     }
+  },
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    },
+    "enable-patching": true
+  },
+  "scripts": {
+    "drupal:validate": "grumphp run"
   }
 }

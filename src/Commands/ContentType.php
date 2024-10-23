@@ -14,7 +14,6 @@ use Drupal\dst_entity_generate\Services\GeneralApi;
  * @package Drupal\dst_entity_generate\Commands
  */
 class ContentType extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -134,7 +133,6 @@ class ContentType extends BaseEntityGenerate {
       $bundles_data[$bundle['name']] = $bundle['type'];
     }
     $this->helper->generateEntityFields($bundle_type, $fields_data, $bundles_data, $mode);
-
   }
 
   /**
@@ -163,7 +161,6 @@ class ContentType extends BaseEntityGenerate {
       \array_push($node_types, $node);
     }
     return $node_types;
-
   }
 
 }

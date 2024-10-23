@@ -13,7 +13,6 @@ use Drupal\dst_entity_generate\Services\GeneralApi;
  * @package Drupal\dst_entity_generate\Commands
  */
 class CustomBlockType extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -66,7 +65,7 @@ class CustomBlockType extends BaseEntityGenerate {
    * @usage drush deg:cbt
    *   Generates custom block types with fields if not present.
    * @usage drush deg:cbt --update
-   *   Generates custom block types with fields if not present also updates existing.
+   *   Update existing entity types with fields and creates new if not present.
    * @option update Update existing entity types with fields and creates new if not present.
    */
   public function generateCustomBlockType($options = ['update' => FALSE]) {

@@ -10,7 +10,6 @@ use Drupal\dst_entity_generate\BaseEntityGenerate;
  * @package Drupal\dst_entity_generate\Commands
  */
 class GenerateAll extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -49,10 +48,12 @@ class GenerateAll extends BaseEntityGenerate {
       'deg:media',
       'deg:p',
       'deg:ct',
-      'deg:cbt'
+      'deg:cbt',
     ];
     if ($options['update']) {
-      $commands = array_map(function($command) { return $command . ' --update'; }, $commands);
+      $commands = array_map(function ($command) {
+        return $command . ' --update';
+      }, $commands);
     }
     // @todo Further refactor it so that we don't have to use exec function.
     foreach ($commands as $command) {

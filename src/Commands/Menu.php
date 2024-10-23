@@ -12,7 +12,6 @@ use Drupal\dst_entity_generate\DstegConstants;
  * @package Drupal\dst_entity_generate\Commands
  */
 class Menu extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -109,7 +108,7 @@ class Menu extends BaseEntityGenerate {
         continue;
       }
       $menu = [];
-      $description = isset($item['description']) ? $item['description'] : $item['name'] . ' menu.';
+      $description = $item['description'] ?? $item['name'] . ' menu.';
       $menu['id'] = str_replace('_', '-', $item['machine_name']);
       $menu['label'] = $item['title'];
       $menu['description'] = $description;
@@ -117,7 +116,6 @@ class Menu extends BaseEntityGenerate {
       \array_push($menu_types, $menu);
     }
     return $menu_types;
-
   }
 
 }

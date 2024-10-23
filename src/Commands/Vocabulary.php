@@ -13,7 +13,6 @@ use Drupal\dst_entity_generate\Services\GeneralApi;
  * @package Drupal\dst_entity_generate\Commands
  */
 class Vocabulary extends BaseEntityGenerate {
-
   /**
    * {@inheritDoc}
    */
@@ -66,7 +65,7 @@ class Vocabulary extends BaseEntityGenerate {
    * @usage drush deg:v
    *   Generates Vocabulary types with fields if not present.
    * @usage drush deg:v --update
-   *   Generates Vocabulary types with fields if not present also updates existing.
+   *   Updates the vocabulary types & if not present, generates new types.
    * @option update Update existing Vocabulary types with fields and creates new if not present.
    */
   public function generateVocabularies($options = ['update' => FALSE]) {
@@ -137,7 +136,7 @@ class Vocabulary extends BaseEntityGenerate {
         continue;
       }
       $vocabs = [];
-      $description = isset($item['description']) ? $item['description'] : $item['name'] . ' vocabulary.';
+      $description = $item['description'] ?? $item['name'] . ' vocabulary.';
       $vocabs['vid'] = $item['machine_name'];
       $vocabs['description'] = $description;
       $vocabs['name'] = $item['name'];
@@ -146,7 +145,6 @@ class Vocabulary extends BaseEntityGenerate {
       \array_push($vocab_types, $vocabs);
     }
     return $vocab_types;
-
   }
 
 }

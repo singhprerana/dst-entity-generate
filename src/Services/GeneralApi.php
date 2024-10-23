@@ -595,7 +595,7 @@ class GeneralApi {
    */
   public function fieldDependencyCheck(array $field_meta, array $field) {
     $dependencies = $field_meta['dependencies'];
-    foreach ($dependencies as $dependency_type => $dependency) {
+    foreach ($dependencies as $dependency) {
       foreach ($dependency as $dependency_key => $dependency_value) {
         switch ($dependency_key) {
           case 'module':
@@ -612,7 +612,7 @@ class GeneralApi {
             break;
 
           case 'settings':
-            foreach ($dependency_value as $setting_key => $setting_value) {
+            foreach ($dependency_value as $setting_value) {
               switch ($setting_value) {
                 case 'allowed_values':
                   $settings = array_map('trim', explode(',', $field['settings/notes']));
